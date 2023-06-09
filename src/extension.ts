@@ -8,21 +8,21 @@ export async function activate(context: ExtensionContext): Promise<void> {
   const decoration = new Decoration(configuration)
   decoration.update()
   window.onDidChangeActiveTextEditor(
-    (editor) => {
+    (_editor) => {
       decoration.update()
     },
     null,
     context.subscriptions
   )
   workspace.onDidChangeTextDocument(
-    (event) => {
+    (_event) => {
       decoration.update()
     },
     null,
     context.subscriptions
   )
   workspace.onDidChangeConfiguration(
-    (event) => {
+    (_event) => {
       const configuration = new Configuration()
       decoration.update(configuration)
     },

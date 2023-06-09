@@ -47,8 +47,12 @@ export const defaultUtilitiesConfig = {
     color: 'rgba(230, 177, 161, 1)'
   },
   flex: {
-    regex: '(?<=[:`\'"\\s])(|inline-)flex(|-)[^`\'"\\s]*',
-    color: 'rgba(192, 175, 224, 1)'
+    regex: '(?<=[:`\'"\\s])flex ',
+    color: '#30A2FF'
+  },
+  flexWrap: {
+    regex: '(?<=[:`\'"\\s])(|inline-)flex-[^`\'"\\s]*',
+    color: '#00C4FF'
   },
   grid: {
     regex: '(?<=[:`\'"\\s])grid(|-)[^`\'"\\s]*',
@@ -76,7 +80,7 @@ export const defaultUtilitiesConfig = {
   },
   gap: {
     regex: '(?<=[:`\'"\\s])gap-[^`\'"\\s]+',
-    color: 'rgba(192, 175, 224, 1)'
+    color: '#9AC5F4'
   },
   justifyContent: {
     regex: '(?<=[:`\'"\\s])justify-(start|end|center|between|around|evenly)',
@@ -225,6 +229,10 @@ export const defaultUtilitiesConfig = {
   },
   inset: {
     regex: '(?<=[:`\'"\\s])(|-)(inset|top|bottom|left|right)-[^`\'"\\s]+',
+    color: 'rgba(242, 142, 111, 1)'
+  },
+  cursor: {
+    regex: '(?<=[:`\'"\\s])(|-)cursor-[^`\'"\\s]+',
     color: 'rgba(242, 142, 111, 1)'
   }
 }

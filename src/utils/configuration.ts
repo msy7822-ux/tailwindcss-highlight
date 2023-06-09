@@ -75,8 +75,8 @@ export class Configuration {
           enable: true,
           regex: value.regex ?? '',
           options: enabledUtilities.includes(key)
-            ? value.style ?? highlightStyle(value.color ?? '')
-            : borderStyle(value.color ?? '')
+            ? value.style ?? textStyle(value.color ?? '')
+            : textStyle(value.color ?? '')
         }
         return acc
       }, {} as Configs),
@@ -107,9 +107,13 @@ export class Configuration {
 
 const borderStyle = (color: string) => ({
   backgroundColor: '',
-  borderStyle: 'dashed',
+  borderStyle: 'solid',
   borderWidth: '0 0 1px 0',
   borderColor: color
+})
+
+const textStyle = (color: string) => ({
+  color: color
 })
 
 const highlightStyle = (color: string) => ({

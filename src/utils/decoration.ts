@@ -18,8 +18,7 @@ export class Decoration {
     this.configuration = configuration
     this.decorators = Object.entries(configuration.configs)
       .filter((config) => config[1].enable)
-      .sort((a, b) => {
-        console.log(a[0])
+      .sort((a, _b) => {
         if (
           a[0].startsWith('variants:') &&
           !['variants:other', 'variants:responsive'].includes(a[0])
